@@ -27,7 +27,7 @@
 
 # The First Solution Is With Time Complexity Of O(n²) and Space Complexity Of O(1)
 # The Brute Force Solution:
-def twoSum(nums,target):
+def two_sum_1(nums,target):
     if len(nums) <=104 and len(nums)>=2 and target >=-109 and target <=109:
         for i in range(0,len(nums)):
              for j in range(0,len(nums)):
@@ -38,6 +38,14 @@ def twoSum(nums,target):
                         return f"Output: [{i},{j}]"
 
 
-print(twoSum([2,7,11,15],10))
+print(two_sum_1([2,7,11,15],9))
 
-# The Second Solution Is With Time Complexity Of O(n) and Space Complexity Of O(n)
+# The Second Solution Is With Time Complexity Of O(n) and Space Complexity Of O(1)
+def two_sum_2(nums,target):
+    if len(nums) <= 104 and len(nums) >= 2 and target >= -109 and target <= 109:
+        complement = 0
+        for i in range(0,len(nums)):
+            complement = target - nums[i]
+            if complement in nums:
+                return f"Output: [{i},{nums.index(complement)}]"
+print(two_sum_2([2,7,11,15],9))
